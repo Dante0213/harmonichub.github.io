@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Music Lessons</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#lessons">Lessons</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="signIn()">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to the Best Online Music Lessons</h2>
+            <p>Learn from the best instructors at your own pace.</p>
+            <a href="#lessons" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="lessons" class="content-section">
+        <div class="container">
+            <h2>Featured Lessons</h2>
+            <div class="lessons-grid">
+                <div class="lesson">
+                    <video width="320" height="240" controls>
+                        <source src="https://your-bucket.s3.amazonaws.com/lesson1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Guitar Basics</h3>
+                    <p>Learn the fundamentals of playing guitar.</p>
+                </div>
+                <div class="lesson">
+                    <video width="320" height="240" controls>
+                        <source src="https://your-bucket.s3.amazonaws.com/lesson2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Advanced Guitar Techniques</h3>
+                    <p>Take your guitar skills to the next level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="content-section">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <div class="courses-grid">
+                <div class="course">
+                    <img src="course1.jpg" alt="Course 1">
+                    <h3>Blues Guitar Mastery</h3>
+                    <p>Master the blues with this comprehensive course.</p>
+                </div>
+                <div class="course">
+                    <img src="course2.jpg" alt="Course 2">
+                    <h3>Rock Guitar Essentials</h3>
+                    <p>Learn the essential techniques for rock guitar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Music Lessons. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
