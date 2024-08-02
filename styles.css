@@ -137,33 +137,5 @@ footer {
     }
 
     header nav ul {
-        justify-content: center;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .tutor, .study-session {
-        flex: 1 1 calc(100% - 2rem);
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 3rem 1rem;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-}
+        justify-content
 
