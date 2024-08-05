@@ -13,7 +13,7 @@ body {
     height: 49.6px;
 }
 
-#home, #tutors, #study, #ai-guide, #store, #sns {
+#home, #tutors, #study, #ai-guide, #store, #sns, #register-tutor {
     padding: 50px 0;
     text-align: center;
 }
