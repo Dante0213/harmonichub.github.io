@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto" id="navLinks">
                 <li class="nav-item" id="signInNavItem">
-                    <a class="nav-link" href="signIn.html">Sign In</a>
+                    <a class="nav-link" href="#" onclick="showSignInModal()">Sign In</a>
                 </li>
                 <li class="nav-item" id="signUpNavItem">
-                    <a class="nav-link" href="signUp.html">Sign Up</a>
+                    <a class="nav-link" href="#" onclick="showSignUpModal()">Sign Up</a>
                 </li>
                 <li class="nav-item d-none" id="signOutNavItem">
                     <a class="nav-link" href="#" onclick="signOut()">Sign Out</a>
@@ -41,6 +41,73 @@
         </div>
         <img src="images/home.jpg" class="img-fluid main-visual" alt="Home Page Image">
     </section>
+
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signInForm" onsubmit="return signIn(event)">
+                        <div class="form-group">
+                            <label for="signInUsername">ID</label>
+                            <input type="text" class="form-control" id="signInUsername" placeholder="Enter your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signInPassword">Password</label>
+                            <input type="password" class="form-control" id="signInPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm" onsubmit="return signUp(event)">
+                        <div class="form-group">
+                            <label for="signUpName">Name</label>
+                            <input type="text" class="form-control" id="signUpName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpEmail">Email</label>
+                            <input type="email" class="form-control" id="signUpEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpConfirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="signUpConfirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Done</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
@@ -70,10 +137,37 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        function showSignInModal() {
+            $('#signInModal').modal('show');
+        }
+
+        function showSignUpModal() {
+            $('#signUpModal').modal('show');
+        }
+
+        function signIn(event) {
+            event.preventDefault();
+            // Simulate successful login
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signInModal').modal('hide');
+            updateNav();
+            window.location.href = 'index.html';
+        }
+
+        function signUp(event) {
+            event.preventDefault();
+            // Simulate successful sign-up
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signUpModal').modal('hide');
+            updateNav();
+            window.location.href = 'index.html';
+        }
+
         function signOut() {
             localStorage.removeItem('isLoggedIn');
+            updateNav();
             window.location.href = 'index.html';
         }
 
