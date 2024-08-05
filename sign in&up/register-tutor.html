@@ -16,11 +16,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="signIn()">Login</a>
+                <li class="nav-item" id="signInNavItem">
+                    <a class="nav-link" href="#" onclick="signIn()">Sign In</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                <li class="nav-item" id="signUpNavItem">
+                    <a class="nav-link" href="#" onclick="signUp()">Sign Up</a>
+                </li>
+                <li class="nav-item" id="logoutNavItem" style="display: none;">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -86,9 +89,37 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.766.0.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        function signIn() {
+            // Sign in logic
+        }
+
+        function signUp() {
+            // Sign up logic
+        }
+
+        function logout() {
+            // Logout logic
+            document.getElementById('signInNavItem').style.display = 'block';
+            document.getElementById('signUpNavItem').style.display = 'block';
+            document.getElementById('logoutNavItem').style.display = 'none';
+        }
+
+        function checkLoginStatus() {
+            // Check if user is logged in
+            var loggedIn = false; // Replace with actual login status check
+            if (loggedIn) {
+                document.getElementById('signInNavItem').style.display = 'none';
+                document.getElementById('signUpNavItem').style.display = 'none';
+                document.getElementById('logoutNavItem').style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+    </script>
 </body>
 </html>
