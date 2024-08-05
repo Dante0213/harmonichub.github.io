@@ -13,8 +13,27 @@ body {
     height: 49.6px;
 }
 
-#home, #tutors, #study, #ai-guide, #store, #sns {
+#home {
     padding: 50px 0;
+    text-align: center;
+}
+
+.main-visual {
+    width: 100%;
+    max-width: 1116px;
+    height: 337.7px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.menu-links {
+    gap: 1rem; /* Adjust the gap as needed */
+}
+
+.menu-links .nav-link {
+    display: inline-block;
+    margin: 0 15px; /* Adjust the margin as needed */
+    font-size: 1.1rem; /* Adjust the font size as needed */
 }
 
 .card img {
