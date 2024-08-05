@@ -17,22 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tutors.html">Tutors</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="study.html">Study</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ai-guide.html">AI Guide</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="store.html">Store</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sns.html">SNS</a>
+                    <a class="nav-link" href="#" onclick="signIn()">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>
@@ -41,42 +26,45 @@
         </div>
     </nav>
 
-    <!-- Study Page -->
-    <section id="study" class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>Study</h2>
-                <img src="images/study.jpg" class="img-fluid" alt="Study Page">
-                <table class="table mt-3">
-                    <thead>
-                        <tr>
-                            <th>Date/Time</th>
-                            <th>Tutor</th>
-                            <th>Instrument</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2024-01-24 14:00</td>
-                            <td>David</td>
-                            <td>Cello</td>
-                            <td>Reserved</td>
-                            <td><button class="btn btn-primary">Enter Lesson</button> <button class="btn btn-danger">Cancel Reservation</button></td>
-                        </tr>
-                        <tr>
-                            <td>2024-01-23 15:30</td>
-                            <td>Bella</td>
-                            <td>Violin</td>
-                            <td>Reserved</td>
-                            <td><button class="btn btn-primary">Enter Lesson</button> <button class="btn btn-danger">Cancel Reservation</button></td>
-                        </tr>
-                        <!-- Add more rows as needed -->
-                    </tbody>
-                </table>
-            </div>
+    <!-- Main Content -->
+    <section id="study" class="container mt-5 pt-5 text-center">
+        <h2>Study</h2>
+        <div class="menu-links d-flex justify-content-center my-4">
+            <a class="nav-link" href="tutors.html">Tutors</a>
+            <a class="nav-link" href="study.html">Study</a>
+            <a class="nav-link" href="ai-guide.html">AI Guide</a>
+            <a class="nav-link" href="store.html">Store</a>
+            <a class="nav-link" href="sns.html">SNS</a>
         </div>
+        <img src="images/study.jpg" class="img-fluid main-visual" alt="Study Page Image">
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Tutor</th>
+                    <th>Instrument</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-01-24 14:00</td>
+                    <td>David</td>
+                    <td>Cello</td>
+                    <td>Reserved</td>
+                    <td><button class="btn btn-primary">Enter Lesson</button> <button class="btn btn-danger">Cancel Reservation</button></td>
+                </tr>
+                <tr>
+                    <td>2024-01-23 15:30</td>
+                    <td>Bella</td>
+                    <td>Violin</td>
+                    <td>Reserved</td>
+                    <td><button class="btn btn-primary">Enter Lesson</button> <button class="btn btn-danger">Cancel Reservation</button></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
     </section>
 
     <!-- Footer -->

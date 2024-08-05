@@ -13,7 +13,7 @@ body {
     height: 49.6px;
 }
 
-#home {
+#home, #tutors, #study, #ai-guide, #store, #sns {
     padding: 50px 0;
     text-align: center;
 }
@@ -43,4 +43,7 @@ body {
 
 footer {
     margin-top: 50px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 }
