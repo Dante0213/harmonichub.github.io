@@ -25,9 +25,6 @@
                 <li class="nav-item d-none" id="signOutNavItem">
                     <a class="nav-link" href="#" onclick="signOut()">Sign Out</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -46,12 +43,6 @@
             </div>
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary btn-block">Log In</button>
-            </div>
-            <div class="form-group text-center">
-                <p>Or log in with:</p>
-                <button type="button" class="btn btn-warning btn-block" onclick="loginWithKakao()">KakaoTalk</button>
-                <button type="button" class="btn btn-success btn-block" onclick="loginWithNaver()">Naver</button>
-                <button type="button" class="btn btn-danger btn-block" onclick="loginWithGoogle()">Gmail</button>
             </div>
         </form>
     </section>
@@ -84,30 +75,16 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function signIn(event) {
             event.preventDefault();
-            // Perform sign-in logic here
             // Simulate successful login
             localStorage.setItem('isLoggedIn', 'true');
             window.location.href = 'index.html';
         }
 
-        function loginWithKakao() {
-            // Add KakaoTalk login logic here
-        }
-
-        function loginWithNaver() {
-            // Add Naver login logic here
-        }
-
-        function loginWithGoogle() {
-            // Add Gmail login logic here
-        }
-
         function signOut() {
-            // Perform sign-out logic here
             localStorage.removeItem('isLoggedIn');
             window.location.href = 'index.html';
         }
