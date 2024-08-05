@@ -5,6 +5,12 @@ body {
 
 .navbar-brand {
     font-weight: bold;
+    height: 49.6px;
+    line-height: 49.6px;
+}
+
+.navbar {
+    height: 49.6px;
 }
 
 #home, #tutors, #study, #ai-guide, #store, #sns {
