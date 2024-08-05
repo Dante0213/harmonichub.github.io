@@ -31,32 +31,139 @@
 
     <!-- Main Content -->
     <section id="register-tutor" class="container mt-5 pt-5 text-center">
-        <h2>Sign Up</h2>
+        <h2>Register as a Tutor</h2>
         <form class="text-left mx-auto" style="max-width: 600px;">
+            <!-- Basic Information -->
+            <h3>Basic Information</h3>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" class="form-control" id="age" placeholder="Enter your age">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
-                <label for="region">Region</label>
-                <input type="text" class="form-control" id="region" placeholder="Enter your region">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
             </div>
             <div class="form-group">
-                <label for="gender">Gender</label>
-                <select class="form-control" id="gender">
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
-                </select>
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="City, Country" required>
+            </div>
+
+            <!-- Educational Background -->
+            <h3>Educational Background</h3>
+            <div class="form-group">
+                <label for="school">School Name</label>
+                <input type="text" class="form-control" id="school" placeholder="Enter your school name" required>
             </div>
             <div class="form-group">
                 <label for="major">Major</label>
-                <input type="text" class="form-control" id="major" placeholder="Enter your major">
+                <input type="text" class="form-control" id="major" placeholder="Enter your major" required>
             </div>
+            <div class="form-group">
+                <label for="degree">Degree</label>
+                <input type="text" class="form-control" id="degree" placeholder="Enter your degree" required>
+            </div>
+            <div class="form-group">
+                <label for="qualifications">Qualifications</label>
+                <textarea class="form-control" id="qualifications" rows="3" placeholder="List your qualifications"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="certificates">Certificates</label>
+                <textarea class="form-control" id="certificates" rows="3" placeholder="List your certificates"></textarea>
+            </div>
+
+            <!-- Career -->
+            <h3>Career</h3>
+            <div class="form-group">
+                <label for="experience">Education and Tutoring Experience</label>
+                <textarea class="form-control" id="experience" rows="4" placeholder="Describe your experience (subject, grade, training)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="workplace">Previous Workplace or Activity Organization</label>
+                <textarea class="form-control" id="workplace" rows="3" placeholder="List your previous workplaces or organizations"></textarea>
+            </div>
+
+            <!-- Specialization -->
+            <h3>Specialization</h3>
+            <div class="form-group">
+                <label for="subjects">Subjects That Can Be Taught</label>
+                <input type="text" class="form-control" id="subjects" placeholder="Enter the subjects you can teach" required>
+            </div>
+            <div class="form-group">
+                <label for="proficiency">Subject-Specific Proficiency</label>
+                <textarea class="form-control" id="proficiency" rows="3" placeholder="Describe your proficiency in specific subjects"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="courses">Specific Educational Courses or Programs</label>
+                <textarea class="form-control" id="courses" rows="3" placeholder="List specific courses or programs (e.g., entrance exams)"></textarea>
+            </div>
+
+            <!-- Personal Introduction -->
+            <h3>Personal Introduction</h3>
+            <div class="form-group">
+                <label for="introduction">Self-Introduction or Tutoring Philosophy</label>
+                <textarea class="form-control" id="introduction" rows="4" placeholder="Write a self-introduction or describe your tutoring philosophy"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="values">Values or Strengths You Can Give to the Student</label>
+                <textarea class="form-control" id="values" rows="3" placeholder="List the values or strengths you can provide"></textarea>
+            </div>
+
+            <!-- Class Method -->
+            <h3>Class Method</h3>
+            <div class="form-group">
+                <label for="classMethod">Class Method</label>
+                <select class="form-control" id="classMethod">
+                    <option>Online</option>
+                    <option>Offline</option>
+                    <option>Both</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeSlots">Available Time Slots for Classes</label>
+                <input type="text" class="form-control" id="timeSlots" placeholder="Enter available time slots" required>
+            </div>
+
+            <!-- Fees and Conditions -->
+            <h3>Fees and Conditions</h3>
+            <div class="form-group">
+                <label for="rates">Hourly Rates</label>
+                <input type="text" class="form-control" id="rates" placeholder="Enter your hourly rates (include rates for 5-10 minute increments if applicable)" required>
+            </div>
+            <div class="form-group">
+                <label for="policies">Class Cancellation and Refund Policies</label>
+                <textarea class="form-control" id="policies" rows="3" placeholder="Describe your class cancellation and refund policies"></textarea>
+            </div>
+
+            <!-- Attached Files -->
+            <h3>Attached Files</h3>
+            <div class="form-group">
+                <label for="resume">Resume</label>
+                <input type="file" class="form-control-file" id="resume">
+            </div>
+            <div class="form-group">
+                <label for="certCopy">Copy of Certificate</label>
+                <input type="file" class="form-control-file" id="certCopy">
+            </div>
+
+            <!-- Profile Photo -->
+            <h3>Profile Photo</h3>
+            <div class="form-group">
+                <label for="profilePhoto">Upload Profile Photo</label>
+                <input type="file" class="form-control-file" id="profilePhoto">
+            </div>
+
+            <!-- Other -->
+            <h3>Other</h3>
+            <div class="form-group">
+                <label for="other">Other Information</label>
+                <textarea class="form-control" id="other" rows="3" placeholder="Enter any other information you would like to provide"></textarea>
+            </div>
+
+            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary btn-block">Register</button>
         </form>
     </section>
@@ -89,7 +196,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.766.0.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="js/scripts.js"></script>

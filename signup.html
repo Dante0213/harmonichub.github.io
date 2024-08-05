@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmonic Hub</title>
+    <title>Harmonic Hub - Sign Up</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -33,16 +33,36 @@
     </nav>
 
     <!-- Main Content -->
-    <section id="home" class="container mt-5 pt-5 text-center">
-        <h1>Welcome to Harmonic Hub</h1>
-        <div class="menu-links d-flex justify-content-center my-4">
-            <a class="nav-link" href="tutors.html">Tutors</a>
-            <a class="nav-link" href="study.html">Study</a>
-            <a class="nav-link" href="ai-guide.html">AI Guide</a>
-            <a class="nav-link" href="store.html">Store</a>
-            <a class="nav-link" href="sns.html">SNS</a>
-        </div>
-        <img src="images/home.jpg" class="img-fluid main-visual" alt="Home Page Image">
+    <section id="sign-up" class="container mt-5 pt-5 text-center">
+        <h2>Sign Up</h2>
+        <form class="text-left mx-auto" style="max-width: 400px;" onsubmit="return signUp(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <div class="form-group text-center">
+                <p>Or sign up with:</p>
+                <button type="button" class="btn btn-warning btn-block" onclick="signUpWithKakao()">KakaoTalk</button>
+                <button type="button" class="btn btn-success btn-block" onclick="signUpWithNaver()">Naver</button>
+                <button type="button" class="btn btn-danger btn-block" onclick="signUpWithGoogle()">Gmail</button>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-block">Done</button>
+                <button type="button" class="btn btn-secondary btn-block" onclick="cancelSignUp()">Cancel</button>
+            </div>
+        </form>
     </section>
 
     <!-- Footer -->
@@ -76,6 +96,31 @@
     <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <script>
+        function signUp(event) {
+            event.preventDefault();
+            // Perform sign-up logic here
+            // Simulate successful sign-up
+            localStorage.setItem('isLoggedIn', 'true');
+            updateNav();
+            window.location.href = 'index.html';
+        }
+
+        function cancelSignUp() {
+            window.location.href = 'index.html';
+        }
+
+        function signUpWithKakao() {
+            // Add KakaoTalk sign-up logic here
+        }
+
+        function signUpWithNaver() {
+            // Add Naver sign-up logic here
+        }
+
+        function signUpWithGoogle() {
+            // Add Gmail sign-up logic here
+        }
+
         function signOut() {
             // Perform sign-out logic here
             localStorage.removeItem('isLoggedIn');
