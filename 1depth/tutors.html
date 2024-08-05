@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" id="signInNavItem">
-                    <a class="nav-link" href="#" onclick="signIn()">Sign In</a>
+                    <a class="nav-link" href="signIn.html">Sign In</a>
                 </li>
                 <li class="nav-item" id="signUpNavItem">
-                    <a class="nav-link" href="#" onclick="signUp()">Sign Up</a>
+                    <a class="nav-link" href="signUp.html">Sign Up</a>
                 </li>
                 <li class="nav-item" id="logoutNavItem" style="display: none;">
                     <a class="nav-link" href="#" onclick="logout()">Logout</a>
@@ -84,7 +84,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.766.0.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="js/scripts.js"></script>
@@ -150,11 +150,13 @@
         });
 
         function signIn() {
-            // Sign in logic
+            // Redirect to sign in page
+            window.location.href = 'signIn.html';
         }
 
         function signUp() {
-            // Sign up logic
+            // Redirect to sign up page
+            window.location.href = 'signUp.html';
         }
 
         function logout() {
