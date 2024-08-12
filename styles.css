@@ -39,31 +39,31 @@ body {
 }
 
 .menu-links .nav-link[href="tutors.html"] {
-    background-image: url('C:/Users/user/Documents/harmonichub_images/tutors.png');
+    background-image: url('images/mainmenu/tutors.png');
     width: 306px;
     height: 323px;
 }
 
 .menu-links .nav-link[href="study.html"] {
-    background-image: url('C:/Users/user/Documents/harmonichub_images/Study.png');
+    background-image: url('images/mainmenu/study.png');
     width: 286px;
     height: 316px;
 }
 
 .menu-links .nav-link[href="store.html"] {
-    background-image: url('C:/Users/user/Documents/harmonichub_images/Store.png');
+    background-image: url('images/mainmenu/store.png');
     width: 286px;
     height: 308px;
 }
 
 .menu-links .nav-link[href="sns.html"] {
-    background-image: url('C:/Users/user/Documents/harmonichub_images/SNS.png');
+    background-image: url('images/mainmenu/sns.png');
     width: 435px;
     height: 325px;
 }
 
 .menu-links .nav-link[href="ai-guide.html"] {
-    background-image: url('C:/Users/user/Documents/harmonichub_images/AI Guide.png');
+    background-image: url('images/mainmenu/ai_guide.png');
     width: 173px;
     height: 173px;
 }
