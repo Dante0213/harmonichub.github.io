@@ -27,21 +27,27 @@
     </nav>
 
     <!-- Main Content -->
-    <section id="study" class="container mt-5 pt-5">
+    <section id="study" class="container mt-5 pt-5 text-center">
         <h2>Study Page</h2>
         <p>Explore our study materials and resources to enhance your musical knowledge.</p>
         <div class="row">
             <div class="col-md-4">
                 <h3>Music Theory</h3>
+                <img src="images/music-theory.jpg" class="img-fluid" alt="Music Theory">
                 <p>Deep dive into music theory with our comprehensive guides.</p>
+                <button class="btn btn-primary">Learn More</button>
             </div>
             <div class="col-md-4">
                 <h3>Practice Exercises</h3>
+                <img src="images/practice-exercises.jpg" class="img-fluid" alt="Practice Exercises">
                 <p>Test your knowledge with exercises designed to reinforce learning.</p>
+                <button class="btn btn-primary">Start Practicing</button>
             </div>
             <div class="col-md-4">
                 <h3>Video Tutorials</h3>
+                <img src="images/video-tutorials.jpg" class="img-fluid" alt="Video Tutorials">
                 <p>Watch our expert instructors guide you through complex topics.</p>
+                <button class="btn btn-primary">Watch Tutorials</button>
             </div>
         </div>
     </section>
@@ -50,64 +56,6 @@
     <a href="ai-guide.html">
         <img src="images/mainmenu/AI Guide.png" alt="AI Guide" id="floatingAiGuide">
     </a>
-
-    <!-- Sign In Modal -->
-    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="signInForm" onsubmit="return signIn(event)">
-                        <div class="form-group">
-                            <label for="signInUsername">ID</label>
-                            <input type="text" class="form-control" id="signInUsername" placeholder="Enter your ID" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signInPassword">Password</label>
-                            <input type="password" class="form-control" id="signInPassword" placeholder="Enter your password" required>
-                        </div>
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary">Sign In</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sign Up Modal -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="signUpForm" onsubmit="return signUp(event)">
-                        <div class="form-group">
-                            <label for="signUpUsername">ID</label>
-                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signUpPassword">Password</label>
-                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
-                        </div>
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
@@ -127,26 +75,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function showSignInModal() {
-            $('#signInModal').modal('show');
-        }
-
-        function showSignUpModal() {
-            $('#signUpModal').modal('show');
-        }
-
-        function signIn(event) {
-            event.preventDefault();
-            localStorage.setItem('isLoggedIn', 'true');
-            $('#signInModal').modal('hide');
-        }
-
-        function signUp(event) {
-            event.preventDefault();
-            localStorage.setItem('isLoggedIn', 'true');
-            $('#signUpModal').modal('hide');
-        }
-    </script>
 </body>
 </html>
