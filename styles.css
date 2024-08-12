@@ -74,3 +74,18 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* Added CSS to fix the content alignment issue on subpages */
+.container {
+    max-width: 1140px; /* You can adjust this value as needed */
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Ensure subpage sections are centered */
+#tutors, #study, #store, #sns {
+    text-align: center; /* Ensure text/content is centered */
+    padding-top: 20px; /* Ensure consistent padding from top */
+}
