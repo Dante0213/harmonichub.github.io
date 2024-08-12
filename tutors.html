@@ -28,97 +28,177 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" id="signInNavItem">
-                    <a class="nav-link" href="#" onclick="showSignInModal()">Sign In</a>
+                    <a class="nav-link" href="signIn.html">Sign In</a>
                 </li>
                 <li class="nav-item" id="signUpNavItem">
-                    <a class="nav-link" href="#" onclick="showSignUpModal()">Sign Up</a>
+                    <a class="nav-link" href="signUp.html">Sign Up</a>
                 </li>
                 <li class="nav-item d-none" id="logoutNavItem">
-                    <a class="nav-link" href="#" onclick="signOut()">Logout</a>
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <section id="tutors" class="container mt-5 pt-5">
-        <h2>Tutors Page</h2>
-        <p>Explore the list of available tutors and their expertise.</p>
-        <!-- Add your Tutors page content here -->
+    <section id="register-tutor" class="container mt-5 pt-5 text-center">
+        <h2>Register as a Tutor</h2>
+        <form class="text-left mx-auto" style="max-width: 600px;">
+            <!-- Basic Information -->
+            <h3>Basic Information</h3>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="City, Country" required>
+            </div>
+
+            <!-- Educational Background -->
+            <h3>Educational Background</h3>
+            <div class="form-group">
+                <label for="school">School Name</label>
+                <input type="text" class="form-control" id="school" placeholder="Enter your school name" required>
+            </div>
+            <div class="form-group">
+                <label for="major">Major</label>
+                <input type="text" class="form-control" id="major" placeholder="Enter your major" required>
+            </div>
+            <div class="form-group">
+                <label for="degree">Degree</label>
+                <input type="text" class="form-control" id="degree" placeholder="Enter your degree" required>
+            </div>
+            <div class="form-group">
+                <label for="qualifications">Qualifications</label>
+                <textarea class="form-control" id="qualifications" rows="3" placeholder="List your qualifications"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="certificates">Certificates</label>
+                <textarea class="form-control" id="certificates" rows="3" placeholder="List your certificates"></textarea>
+            </div>
+
+            <!-- Career -->
+            <h3>Career</h3>
+            <div class="form-group">
+                <label for="experience">Education and Tutoring Experience</label>
+                <textarea class="form-control" id="experience" rows="4" placeholder="Describe your experience (subject, grade, training)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="workplace">Previous Workplace or Activity Organization</label>
+                <textarea class="form-control" id="workplace" rows="3" placeholder="List your previous workplaces or organizations"></textarea>
+            </div>
+
+            <!-- Specialization -->
+            <h3>Specialization</h3>
+            <div class="form-group">
+                <label for="subjects">Subjects That Can Be Taught</label>
+                <input type="text" class="form-control" id="subjects" placeholder="Enter the subjects you can teach" required>
+            </div>
+            <div class="form-group">
+                <label for="proficiency">Subject-Specific Proficiency</label>
+                <textarea class="form-control" id="proficiency" rows="3" placeholder="Describe your proficiency in specific subjects"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="courses">Specific Educational Courses or Programs</label>
+                <textarea class="form-control" id="courses" rows="3" placeholder="List specific courses or programs (e.g., entrance exams)"></textarea>
+            </div>
+
+            <!-- Personal Introduction -->
+            <h3>Personal Introduction</h3>
+            <div class="form-group">
+                <label for="introduction">Self-Introduction or Tutoring Philosophy</label>
+                <textarea class="form-control" id="introduction" rows="4" placeholder="Write a self-introduction or describe your tutoring philosophy"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="values">Values or Strengths You Can Give to the Student</label>
+                <textarea class="form-control" id="values" rows="3" placeholder="List the values or strengths you can provide"></textarea>
+            </div>
+
+            <!-- Class Method -->
+            <h3>Class Method</h3>
+            <div class="form-group">
+                <label for="classMethod">Class Method</label>
+                <select class="form-control" id="classMethod">
+                    <option>Online</option>
+                    <option>Offline</option>
+                    <option>Both</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeSlots">Available Time Slots for Classes</label>
+                <input type="text" class="form-control" id="timeSlots" placeholder="Enter available time slots" required>
+            </div>
+
+            <!-- Fees and Conditions -->
+            <h3>Fees and Conditions</h3>
+            <div class="form-group">
+                <label for="rates">Hourly Rates</label>
+                <input type="text" class="form-control" id="rates" placeholder="Enter your hourly rates (include rates for 5-10 minute increments if applicable)" required>
+            </div>
+            <div class="form-group">
+                <label for="policies">Class Cancellation and Refund Policies</label>
+                <textarea class="form-control" id="policies" rows="3" placeholder="Describe your class cancellation and refund policies"></textarea>
+            </div>
+
+            <!-- Attached Files -->
+            <h3>Attached Files</h3>
+            <div class="form-group">
+                <label for="resume">Resume</label>
+                <input type="file" class="form-control-file" id="resume">
+            </div>
+            <div class="form-group">
+                <label for="certCopy">Copy of Certificate</label>
+                <input type="file" class="form-control-file" id="certCopy">
+            </div>
+
+            <!-- Profile Photo -->
+            <h3>Profile Photo</h3>
+            <div class="form-group">
+                <label for="profilePhoto">Upload Profile Photo</label>
+                <input type="file" class="form-control-file" id="profilePhoto">
+            </div>
+
+            <!-- Other -->
+            <h3>Other</h3>
+            <div class="form-group">
+                <label for="other">Other Information</label>
+                <textarea class="form-control" id="other" rows="3" placeholder="Enter any other information you would like to provide"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
     </section>
-
-    <!-- Floating AI Guide -->
-    <a href="ai-guide.html">
-        <img src="images/mainmenu/AI Guide.png" alt="AI Guide" id="floatingAiGuide">
-    </a>
-
-    <!-- Sign In Modal -->
-    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="signInForm" onsubmit="return signIn(event)">
-                        <div class="form-group">
-                            <label for="signInUsername">ID</label>
-                            <input type="text" class="form-control" id="signInUsername" placeholder="Enter your ID" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signInPassword">Password</label>
-                            <input type="password" class="form-control" id="signInPassword" placeholder="Enter your password" required>
-                        </div>
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary">Sign In</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sign Up Modal -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="signUpForm" onsubmit="return signUp(event)">
-                        <div class="form-group">
-                            <label for="signUpUsername">ID</label>
-                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signUpPassword">Password</label>
-                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
-                        </div>
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
-            <h5 class="text-uppercase">Tutoring Support</h5>
-            <p>Contact us for more information on our tutoring services.</p>
-            <ul class="list-unstyled">
-                <li><a href="#" class="text-dark">Contact Us</a></li>
-                <li><a href="#" class="text-dark">FAQs</a></li>
-            </ul>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Customer Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Frequently Asked Questions</a></li>
+                        <li><a href="#" class="text-dark">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Facebook</a></li>
+                        <li><a href="#" class="text-dark">Twitter</a></li>
+                        <li><a href="#" class="text-dark">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="text-center p-3 bg-dark text-white">
             © 2024 Harmonic Hub
@@ -128,43 +208,37 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.766.0.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script>
-        function showSignInModal() {
-            $('#signInModal').modal('show');
+        function signIn() {
+            // Redirect to sign in page
+            window.location.href = 'signIn.html';
         }
 
-        function showSignUpModal() {
-            $('#signUpModal').modal('show');
+        function signUp() {
+            // Redirect to sign up page
+            window.location.href = 'signUp.html';
         }
 
-        function signIn(event) {
-            event.preventDefault();
-            localStorage.setItem('isLoggedIn', 'true');
-            $('#signInModal').modal('hide');
-            updateNav();
+        function logout() {
+            // Logout logic
+            document.getElementById('signInNavItem').style.display = 'block';
+            document.getElementById('signUpNavItem').style.display = 'block';
+            document.getElementById('logoutNavItem').style.display = 'none';
         }
 
-        function signUp(event) {
-            event.preventDefault();
-            localStorage.setItem('isLoggedIn', 'true');
-            $('#signUpModal').modal('hide');
-            updateNav();
+        function checkLoginStatus() {
+            // Check if user is logged in
+            var loggedIn = false; // Replace with actual login status check
+            if (loggedIn) {
+                document.getElementById('signInNavItem').style.display = 'none';
+                document.getElementById('signUpNavItem').style.display = 'none';
+                document.getElementById('logoutNavItem').style.display = 'block';
+            }
         }
 
-        function signOut() {
-            localStorage.removeItem('isLoggedIn');
-            $('#signOutModal').modal('hide');
-            updateNav();
-        }
-
-        function updateNav() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-            document.getElementById('signInNavItem').classList.toggle('d-none', isLoggedIn);
-            document.getElementById('logoutNavItem').classList.toggle('d-none', !isLoggedIn);
-            document.getElementById('signUpNavItem').classList.toggle('d-none', isLoggedIn);
-        }
-
-        document.addEventListener('DOMContentLoaded', updateNav);
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
     </script>
 </body>
 </html>
