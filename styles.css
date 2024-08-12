@@ -33,9 +33,11 @@ body {
 .menu-links .nav-link {
     display: inline-block;
     margin: 0 15px;
-    font-size: 1.1rem;
-    /* Background images for each menu item */
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
     background-size: cover;
+    background-position: center;
+    text-indent: -9999px; /* Hide the text */
 }
 
 .menu-links .nav-link[href="tutors.html"] {
