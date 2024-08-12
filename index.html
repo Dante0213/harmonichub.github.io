@@ -21,8 +21,11 @@
                 <li class="nav-item" id="signInNavItem">
                     <a class="nav-link" href="#" onclick="showSignInModal()">Sign In</a>
                 </li>
+                <li class="nav-item" id="signUpNavItem">
+                    <a class="nav-link" href="#" onclick="showSignUpModal()">Sign Up</a>
+                </li>
                 <li class="nav-item d-none" id="signOutNavItem">
-                    <a class="nav-link" href="#" onclick="showSignOutModal()">Sign Out</a>
+                    <a class="nav-link" href="#" onclick="signOut()">Sign Out</a>
                 </li>
             </ul>
         </div>
@@ -79,22 +82,30 @@
         </div>
     </div>
 
-    <!-- Sign Out Modal -->
-    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="signOutModalLabel">Sign Out</h5>
+                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to sign out?</p>
-                    <div class="text-right">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" onclick="signOut()">Sign Out</button>
-                    </div>
+                    <form id="signUpForm" onsubmit="return signUp(event)">
+                        <div class="form-group">
+                            <label for="signUpUsername">ID</label>
+                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -128,14 +139,14 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function showSignInModal() {
             $('#signInModal').modal('show');
         }
 
-        function showSignOutModal() {
-            $('#signOutModal').modal('show');
+        function showSignUpModal() {
+            $('#signUpModal').modal('show');
         }
 
         function signIn(event) {
@@ -143,6 +154,15 @@
             // Simulate successful login
             localStorage.setItem('isLoggedIn', 'true');
             $('#signInModal').modal('hide');
+            updateNav();
+            window.location.href = 'index.html';
+        }
+
+        function signUp(event) {
+            event.preventDefault();
+            // Simulate successful sign-up
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signUpModal').modal('hide');
             updateNav();
             window.location.href = 'index.html';
         }
@@ -158,6 +178,7 @@
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             document.getElementById('signInNavItem').classList.toggle('d-none', isLoggedIn);
             document.getElementById('signOutNavItem').classList.toggle('d-none', !isLoggedIn);
+            document.getElementById('signUpNavItem').classList.toggle('d-none', isLoggedIn);
         }
 
         document.addEventListener('DOMContentLoaded', updateNav);

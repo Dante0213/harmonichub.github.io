@@ -17,13 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" id="signInNavItem">
-                    <a class="nav-link" href="#" onclick="signIn()">Sign In</a>
+                    <a class="nav-link" href="#" onclick="showSignInModal()">Sign In</a>
                 </li>
                 <li class="nav-item" id="signUpNavItem">
-                    <a class="nav-link" href="#" onclick="signUp()">Sign Up</a>
+                    <a class="nav-link" href="#" onclick="showSignUpModal()">Sign Up</a>
                 </li>
-                <li class="nav-item" id="logoutNavItem" style="display: none;">
-                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                <li class="nav-item d-none" id="logoutNavItem">
+                    <a class="nav-link" href="#" onclick="signOut()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -31,82 +31,71 @@
 
     <!-- Main Content -->
     <section id="sns" class="container mt-5 pt-5">
-        <div class="row">
-            <!-- Left Sidebar -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="images/profile.jpg" class="card-img-top" alt="Profile Picture">
-                    <div class="card-body">
-                        <h5 class="card-title">Username</h5>
-                        <p class="card-text">Bio information here...</p>
-                        <a href="#" class="btn btn-primary btn-block">Edit Profile</a>
-                    </div>
+        <!-- Your SNS page content here -->
+    </section>
+
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Followers</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Follower 1</li>
-                            <li class="list-group-item">Follower 2</li>
-                            <li class="list-group-item">Follower 3</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Feed -->
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Post Title</h5>
-                        <p class="card-text">Description of the post.</p>
-                        <video controls class="w-100">
-                            <source src="videos/sample-video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="mt-2">
-                            <a href="#" class="btn btn-primary">Like</a>
-                            <a href="#" class="btn btn-secondary">Comment</a>
-                        </p>
-                    </div>
-                </div>
-                <!-- Repeat for other posts -->
-            </div>
-            <!-- Right Sidebar -->
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Suggestions</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Suggestion 1</li>
-                            <li class="list-group-item">Suggestion 2</li>
-                            <li class="list-group-item">Suggestion 3</li>
-                        </ul>
-                    </div>
+                <div class="modal-body">
+                    <form id="signInForm" onsubmit="return signIn(event)">
+                        <div class="form-group">
+                            <label for="signInUsername">ID</label>
+                            <input type="text" class="form-control" id="signInUsername" placeholder="Enter your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signInPassword">Password</label>
+                            <input type="password" class="form-control" id="signInPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm" onsubmit="return signUp(event)">
+                        <div class="form-group">
+                            <label for="signUpUsername">ID</label>
+                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Customer Support</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Frequently Asked Questions</a></li>
-                        <li><a href="#" class="text-dark">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Follow Us</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Facebook</a></li>
-                        <li><a href="#" class="text-dark">Twitter</a></li>
-                        <li><a href="#" class="text-dark">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Your footer content here -->
         </div>
         <div class="text-center p-3 bg-dark text-white">
             © 2024 Harmonic Hub
@@ -116,36 +105,46 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.766.0.min.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="js/scripts.js"></script>
     <script>
-        function signIn() {
-            // Sign in logic
+        function showSignInModal() {
+            $('#signInModal').modal('show');
         }
 
-        function signUp() {
-            // Sign up logic
+        function showSignUpModal() {
+            $('#signUpModal').modal('show');
         }
 
-        function logout() {
-            // Logout logic
-            document.getElementById('signInNavItem').style.display = 'block';
-            document.getElementById('signUpNavItem').style.display = 'block';
-            document.getElementById('logoutNavItem').style.display = 'none';
+        function signIn(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signInModal').modal('hide');
+            updateNav();
+            window.location.href = 'sns.html';
         }
 
-        function checkLoginStatus() {
-            // Check if user is logged in
-            var loggedIn = false; // Replace with actual login status check
-            if (loggedIn) {
-                document.getElementById('signInNavItem').style.display = 'none';
-                document.getElementById('signUpNavItem').style.display = 'none';
-                document.getElementById('logoutNavItem').style.display = 'block';
-            }
+        function signUp(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signUpModal').modal('hide');
+            updateNav();
+            window.location.href = 'sns.html';
         }
 
-        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+        function signOut() {
+            localStorage.removeItem('isLoggedIn');
+            $('#signOutModal').modal('hide');
+            updateNav();
+            window.location.href = 'sns.html';
+        }
+
+        function updateNav() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            document.getElementById('signInNavItem').classList.toggle('d-none', isLoggedIn);
+            document.getElementById('logoutNavItem').classList.toggle('d-none', !isLoggedIn);
+            document.getElementById('signUpNavItem').classList.toggle('d-none', isLoggedIn);
+        }
+
+        document.addEventListener('DOMContentLoaded', updateNav);
     </script>
 </body>
 </html>

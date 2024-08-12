@@ -16,77 +16,86 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="signIn()">Login</a>
+                <li class="nav-item" id="signInNavItem">
+                    <a class="nav-link" href="#" onclick="showSignInModal()">Sign In</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                <li class="nav-item" id="signUpNavItem">
+                    <a class="nav-link" href="#" onclick="showSignUpModal()">Sign Up</a>
+                </li>
+                <li class="nav-item d-none" id="logoutNavItem">
+                    <a class="nav-link" href="#" onclick="signOut()">Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <section id="study" class="container mt-5 pt-5 text-center">
-        <h2>Study</h2>
-        <div class="menu-links d-flex justify-content-center my-4">
-            <a class="nav-link" href="tutors.html">Tutors</a>
-            <a class="nav-link" href="study.html">Study</a>
-            <a class="nav-link" href="ai-guide.html">AI Guide</a>
-            <a class="nav-link" href="store.html">Store</a>
-            <a class="nav-link" href="sns.html">SNS</a>
-        </div>
-        <img src="images/study.jpg" class="img-fluid main-visual" alt="Study Page Image">
-        <table class="table mt-3">
-            <thead>
-                <tr>
-                    <th>Date/Time</th>
-                    <th>Tutor</th>
-                    <th>Instrument</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2024-01-24 14:00</td>
-                    <td>David</td>
-                    <td>Cello</td>
-                    <td>Reserved</td>
-                    <td><button class="btn btn-primary">Enter Lesson</button> <button class="btn btn-danger">Cancel Reservation</button></td>
-                </tr>
-                <tr>
-                    <td>2024-01-23 15:30</td>
-                    <td>Bella</td>
-                    <td>Violin</td>
-                    <td>Reserved</td>
-                    <td><button class="btn btn-primary">Enter Lesson</button> <button class="btn btn-danger">Cancel Reservation</button></td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    <section id="study" class="container mt-5 pt-5">
+        <!-- Your Study page content here -->
     </section>
+
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signInForm" onsubmit="return signIn(event)">
+                        <div class="form-group">
+                            <label for="signInUsername">ID</label>
+                            <input type="text" class="form-control" id="signInUsername" placeholder="Enter your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signInPassword">Password</label>
+                            <input type="password" class="form-control" id="signInPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm" onsubmit="return signUp(event)">
+                        <div class="form-group">
+                            <label for="signUpUsername">ID</label>
+                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Customer Support</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Frequently Asked Questions</a></li>
-                        <li><a href="#" class="text-dark">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Follow Us</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Facebook</a></li>
-                        <li><a href="#" class="text-dark">Twitter</a></li>
-                        <li><a href="#" class="text-dark">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Your footer content here -->
         </div>
         <div class="text-center p-3 bg-dark text-white">
             © 2024 Harmonic Hub
@@ -95,9 +104,47 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.766.0.min.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="js/scripts.js"></script>
+    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showSignInModal() {
+            $('#signInModal').modal('show');
+        }
+
+        function showSignUpModal() {
+            $('#signUpModal').modal('show');
+        }
+
+        function signIn(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signInModal').modal('hide');
+            updateNav();
+            window.location.href = 'study.html';
+        }
+
+        function signUp(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signUpModal').modal('hide');
+            updateNav();
+            window.location.href = 'study.html';
+        }
+
+        function signOut() {
+            localStorage.removeItem('isLoggedIn');
+            $('#signOutModal').modal('hide');
+            updateNav();
+            window.location.href = 'study.html';
+        }
+
+        function updateNav() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            document.getElementById('signInNavItem').classList.toggle('d-none', isLoggedIn);
+            document.getElementById('logoutNavItem').classList.toggle('d-none', !isLoggedIn);
+            document.getElementById('signUpNavItem').classList.toggle('d-none', isLoggedIn);
+        }
+
+        document.addEventListener('DOMContentLoaded', updateNav);
+    </script>
 </body>
 </html>
