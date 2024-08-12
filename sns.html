@@ -27,14 +27,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item" id="signInNavItem">
-                    <a class="nav-link" href="signIn.html">Sign In</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSignInModal()">Sign In</a>
                 </li>
-                <li class="nav-item" id="signUpNavItem">
-                    <a class="nav-link" href="signUp.html">Sign Up</a>
-                </li>
-                <li class="nav-item d-none" id="logoutNavItem">
-                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSignUpModal()">Sign Up</a>
                 </li>
             </ul>
         </div>
@@ -45,12 +42,89 @@
         <h2>SNS Page</h2>
         <p>Welcome to the Social Networking Services (SNS) section of Harmonic Hub. Here you can connect with others and share your musical journey.</p>
         <!-- Add your SNS page content here -->
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Uploaded Videos</h3>
+                <p>Check out the latest videos shared by our community members.</p>
+                <ul>
+                    <li>Video 1: <a href="#">Watch Now</a></li>
+                    <li>Video 2: <a href="#">Watch Now</a></li>
+                    <li>Video 3: <a href="#">Watch Now</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Community Discussions</h3>
+                <p>Join the conversation and connect with like-minded musicians.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Events</h3>
+                <p>Stay updated on upcoming musical events and gatherings.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Floating AI Guide -->
     <a href="ai-guide.html">
         <img src="images/mainmenu/AI Guide.png" alt="AI Guide" id="floatingAiGuide">
     </a>
+
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signInForm" onsubmit="return signIn(event)">
+                        <div class="form-group">
+                            <label for="signInUsername">ID</label>
+                            <input type="text" class="form-control" id="signInUsername" placeholder="Enter your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signInPassword">Password</label>
+                            <input type="password" class="form-control" id="signInPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm" onsubmit="return signUp(event)">
+                        <div class="form-group">
+                            <label for="signUpUsername">ID</label>
+                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
@@ -72,34 +146,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function signIn() {
-            // Redirect to sign in page
-            window.location.href = 'signIn.html';
+        function showSignInModal() {
+            $('#signInModal').modal('show');
         }
 
-        function signUp() {
-            // Redirect to sign up page
-            window.location.href = 'signUp.html';
+        function showSignUpModal() {
+            $('#signUpModal').modal('show');
         }
 
-        function logout() {
-            // Logout logic
-            document.getElementById('signInNavItem').style.display = 'block';
-            document.getElementById('signUpNavItem').style.display = 'block';
-            document.getElementById('logoutNavItem').style.display = 'none';
+        function signIn(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signInModal').modal('hide');
         }
 
-        function checkLoginStatus() {
-            // Check if user is logged in
-            var loggedIn = false; // Replace with actual login status check
-            if (loggedIn) {
-                document.getElementById('signInNavItem').style.display = 'none';
-                document.getElementById('signUpNavItem').style.display = 'none';
-                document.getElementById('logoutNavItem').style.display = 'block';
-            }
+        function signUp(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signUpModal').modal('hide');
         }
-
-        document.addEventListener('DOMContentLoaded', checkLoginStatus);
     </script>
 </body>
 </html>
