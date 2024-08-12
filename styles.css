@@ -38,9 +38,29 @@ body {
 }
 
 .menu-links img {
-    max-width: 100%;
-    height: auto;
+    width: calc(306px - 100px); /* Tutor image original width was 306px */
+    height: calc(323px - 100px); /* Tutor image original height was 323px */
     display: block;
+}
+
+.menu-links a[href="study.html"] img {
+    width: calc(286px - 100px); /* Study image original width was 286px */
+    height: calc(316px - 100px); /* Study image original height was 316px */
+}
+
+.menu-links a[href="store.html"] img {
+    width: calc(286px - 100px); /* Store image original width was 286px */
+    height: calc(308px - 100px); /* Store image original height was 308px */
+}
+
+.menu-links a[href="sns.html"] img {
+    width: calc(435px - 100px); /* SNS image original width was 435px */
+    height: calc(325px - 100px); /* SNS image original height was 325px */
+}
+
+.menu-links a[href="ai-guide.html"] img {
+    width: calc(173px - 100px); /* AI Guide image original width was 173px */
+    height: calc(173px - 100px); /* AI Guide image original height was 173px */
 }
 
 .card img {
