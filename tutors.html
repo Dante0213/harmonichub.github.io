@@ -142,7 +142,6 @@
             localStorage.setItem('isLoggedIn', 'true');
             $('#signInModal').modal('hide');
             updateNav();
-            window.location.href = 'tutors.html';
         }
 
         function signUp(event) {
@@ -150,14 +149,12 @@
             localStorage.setItem('isLoggedIn', 'true');
             $('#signUpModal').modal('hide');
             updateNav();
-            window.location.href = 'tutors.html';
         }
 
         function signOut() {
             localStorage.removeItem('isLoggedIn');
             $('#signOutModal').modal('hide');
             updateNav();
-            window.location.href = 'tutors.html';
         }
 
         function updateNav() {

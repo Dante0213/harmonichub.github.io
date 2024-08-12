@@ -13,8 +13,8 @@
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            width: 123px; /* Reduced width by 50 pixels */
-            height: 123px; /* Reduced height by 50 pixels */
+            width: 123px;
+            height: 123px;
         }
     </style>
 </head>
@@ -151,7 +151,6 @@
             localStorage.setItem('isLoggedIn', 'true');
             $('#signInModal').modal('hide');
             updateNav();
-            window.location.href = 'index.html';
         }
 
         function signUp(event) {
@@ -159,20 +158,18 @@
             localStorage.setItem('isLoggedIn', 'true');
             $('#signUpModal').modal('hide');
             updateNav();
-            window.location.href = 'index.html';
         }
 
         function signOut() {
             localStorage.removeItem('isLoggedIn');
             $('#signOutModal').modal('hide');
             updateNav();
-            window.location.href = 'index.html';
         }
 
         function updateNav() {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             document.getElementById('signInNavItem').classList.toggle('d-none', isLoggedIn);
-            document.getElementById('signOutNavItem').classList.toggle('d-none', !isLoggedIn);
+            document.getElementById('logoutNavItem').classList.toggle('d-none', !isLoggedIn);
             document.getElementById('signUpNavItem').classList.toggle('d-none', isLoggedIn);
         }
 

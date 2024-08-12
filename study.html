@@ -88,4 +88,83 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm" onsubmit="return signUp(event)">
+                        <div class="form-group">
+                            <label for="signUpUsername">ID</label>
+                            <input type="text" class="form-control" id="signUpUsername" placeholder="Choose your ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Choose your password" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <h5 class="text-uppercase">Study Resources</h5>
+            <p>Access a wide range of study materials tailored to your needs.</p>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-dark">Study Guides</a></li>
+                <li><a href="#" class="text-dark">Tutorials</a></li>
+            </ul>
+        </div>
+        <div class="text-center p-3 bg-dark text-white">
+            © 2024 Harmonic Hub
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showSignInModal() {
+            $('#signInModal').modal('show');
+        }
+
+        function showSignUpModal() {
+            $('#signUpModal').modal('show');
+        }
+
+        function signIn(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signInModal').modal('hide');
+            updateNav();
+        }
+
+        function signUp(event) {
+            event.preventDefault();
+            localStorage.setItem('isLoggedIn', 'true');
+            $('#signUpModal').modal('hide');
+            updateNav();
+        }
+
+        function signOut() {
+            localStorage.removeItem('isLoggedIn');
+            $('#signOutModal').modal('hide');
+            updateNav();
+        }
+
+        function updateNav() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            document.getElementById('signInNavItem').classList.toggle('d-none', isLoggedIn);
+            document.getElementById('logoutNavItem').classList.toggle('d-none', !isLoggedIn);
+            document.getElementById('signUpNavItem').classList.toggle('d-none', isLoggedIn);
+        }
+
+        document.addEventListener('DOMContentLoaded', updateNav);
+    </script>
+</body>
+</html>
