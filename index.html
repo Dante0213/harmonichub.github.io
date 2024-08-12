@@ -6,6 +6,17 @@
     <title>Harmonic Hub</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Floating AI Guide */
+        #floatingAiGuide {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 123px; /* Reduced width by 50 pixels */
+            height: 123px; /* Reduced height by 50 pixels */
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -48,10 +59,15 @@
                 <img src="images/mainmenu/SNS.png" alt="SNS" width="335" height="225">
             </a>
             <a class="nav-link" href="ai-guide.html">
-                <img src="images/mainmenu/AI Guide.png" alt="AI Guide" width="173" height="173">
+                <img src="images/mainmenu/AI Guide.png" alt="AI Guide" width="123" height="123"> <!-- Reduced by 50 pixels -->
             </a>
         </div>
     </section>
+
+    <!-- Floating AI Guide -->
+    <a href="ai-guide.html">
+        <img src="images/mainmenu/AI Guide.png" alt="AI Guide" id="floatingAiGuide">
+    </a>
 
     <!-- Sign In Modal -->
     <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
@@ -114,23 +130,7 @@
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Customer Support</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Frequently Asked Questions</a></li>
-                        <li><a href="#" class="text-dark">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Follow Us</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Facebook</a></li>
-                        <li><a href="#" class="text-dark">Twitter</a></li>
-                        <li><a href="#" class="text-dark">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Footer content -->
         </div>
         <div class="text-center p-3 bg-dark text-white">
             © 2024 Harmonic Hub
@@ -139,7 +139,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function showSignInModal() {
             $('#signInModal').modal('show');
@@ -151,7 +151,6 @@
 
         function signIn(event) {
             event.preventDefault();
-            // Simulate successful login
             localStorage.setItem('isLoggedIn', 'true');
             $('#signInModal').modal('hide');
             updateNav();
@@ -160,7 +159,6 @@
 
         function signUp(event) {
             event.preventDefault();
-            // Simulate successful sign-up
             localStorage.setItem('isLoggedIn', 'true');
             $('#signUpModal').modal('hide');
             updateNav();

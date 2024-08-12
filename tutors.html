@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harmonic Hub - Tutors</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Floating AI Guide */
+        #floatingAiGuide {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 123px;
+            height: 123px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -33,6 +44,11 @@
     <section id="tutors" class="container mt-5 pt-5">
         <!-- Your Tutors page content here -->
     </section>
+
+    <!-- Floating AI Guide -->
+    <a href="ai-guide.html">
+        <img src="images/mainmenu/AI Guide.png" alt="AI Guide" id="floatingAiGuide">
+    </a>
 
     <!-- Sign In Modal -->
     <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
