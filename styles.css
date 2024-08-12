@@ -21,19 +21,51 @@ body {
 .main-visual {
     width: 100%;
     max-width: 1116px;
-    height: 337.7px;
+    height: 1098px;
     object-fit: cover;
     margin: 0 auto;
 }
 
 .menu-links {
-    gap: 1rem; /* Adjust the gap as needed */
+    gap: 1rem;
 }
 
 .menu-links .nav-link {
     display: inline-block;
-    margin: 0 15px; /* Adjust the margin as needed */
-    font-size: 1.1rem; /* Adjust the font size as needed */
+    margin: 0 15px;
+    font-size: 1.1rem;
+    /* Background images for each menu item */
+    background-size: cover;
+}
+
+.menu-links .nav-link[href="tutors.html"] {
+    background-image: url('C:/Users/user/Documents/harmonichub_images/tutors.png');
+    width: 306px;
+    height: 323px;
+}
+
+.menu-links .nav-link[href="study.html"] {
+    background-image: url('C:/Users/user/Documents/harmonichub_images/Study.png');
+    width: 286px;
+    height: 316px;
+}
+
+.menu-links .nav-link[href="store.html"] {
+    background-image: url('C:/Users/user/Documents/harmonichub_images/Store.png');
+    width: 286px;
+    height: 308px;
+}
+
+.menu-links .nav-link[href="sns.html"] {
+    background-image: url('C:/Users/user/Documents/harmonichub_images/SNS.png');
+    width: 435px;
+    height: 325px;
+}
+
+.menu-links .nav-link[href="ai-guide.html"] {
+    background-image: url('C:/Users/user/Documents/harmonichub_images/AI Guide.png');
+    width: 173px;
+    height: 173px;
 }
 
 .card img {
